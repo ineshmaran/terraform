@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  terraform:
+    container_name: terraform_ubuntu
+    build: .
+    ports:
+     - "80:8080"
+     - "443:8443"
+
+networks:
+  default:
+    ipam:
+      config:
+       - subnet: "172.25.0.0/16"
